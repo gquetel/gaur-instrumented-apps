@@ -21,7 +21,6 @@ if [ $1 -lt 1 ] || [ $1 -gt 30 ]; then
 fi
 
 echo "Starting $1 MySQL servers..."
-
 for i in $(seq 1 $1); do
     PARENT_DIR=$PREFIX"_"$i
     DATA_PATH=$PARENT_DIR"/datadir"
@@ -33,6 +32,7 @@ for i in $(seq 1 $1); do
         if [ -n "$2" ]; then
             ./result/bin/mysqld --defaults-file=$2 --log-error --basedir=$BASEDIR --socket $SOCKET_PATH --datadir $DATA_PATH --port $PORT --daemonize 
         else
+            echo " ./result/bin/mysqld --log-error --basedir=$BASEDIR --socket $SOCKET_PATH --datadir $DATA_PATH --port $PORT --daemonize "
             ./result/bin/mysqld --log-error --basedir=$BASEDIR --socket $SOCKET_PATH --datadir $DATA_PATH --port $PORT --daemonize 
         fi
         
