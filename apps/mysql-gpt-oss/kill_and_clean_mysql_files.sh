@@ -1,7 +1,7 @@
 #!/bin/sh
 S_HOSTNAME=$(hostname -s)
 DEL_PATH=~/tmp/$S_HOSTNAME/
-PREFIX=$DEL_PATH"mysqld-oss-gpt"
+PREFIX=$DEL_PATH"mysqld-gpt-oss"
 
 # Find PIDs of process using the PREFIX path and the --daemonize flag, i.e., the MySQL servers
 PID=$(ps -aux | grep $PREFIX | grep "daemonize" | awk '{print $2}')
@@ -29,6 +29,6 @@ fi
 read -p "Do you want to remove the mysqld directories? [y/n] " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
-  rm -rf $DEL_PATH
+  rm -rf $PREFIX
   echo "Directories removed."
 fi

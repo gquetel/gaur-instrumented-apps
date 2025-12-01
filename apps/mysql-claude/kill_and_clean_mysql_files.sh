@@ -29,6 +29,6 @@ fi
 read -p "Do you want to remove the mysqld directories? [y/n] " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
-  rm -rf $DEL_PATH
+  rm -rf $PREFIX
   echo "Directories removed."
 fi
