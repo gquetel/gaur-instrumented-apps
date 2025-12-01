@@ -1,7 +1,7 @@
 #!/bin/sh
 S_HOSTNAME=$(hostname -s)
 DEL_PATH=~/tmp/$S_HOSTNAME/
-PREFIX=$DEL_PATH"mysqld-mistral"
+PREFIX=$DEL_PATH"mysqld-llama"
 
 # Find PIDs of process using the PREFIX path and the --daemonize flag, i.e., the MySQL servers
 PID=$(ps -aux | grep $PREFIX | grep "daemonize" | awk '{print $2}')

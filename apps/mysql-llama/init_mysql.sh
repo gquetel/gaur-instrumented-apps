@@ -1,6 +1,6 @@
 #!/bin/sh
 S_HOSTNAME=$(hostname -s)
-PREFIX=~/tmp/$S_HOSTNAME/mysqld-mistral
+PREFIX=~/tmp/$S_HOSTNAME/mysqld-llama
 BASEDIR=./result/bin
 
 if [ $# -lt 1 ]; then
