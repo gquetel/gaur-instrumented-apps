@@ -1,6 +1,6 @@
 #!/bin/sh
 S_HOSTNAME=$(hostname -s)
-PREFIX=~/tmp/$S_HOSTNAME/mysqld-claude
+PREFIX=~/tmp/$S_HOSTNAME/mysqld-llama
 BASEDIR=./result/bin
 
 if [ $# -lt 1 ]; then
@@ -25,7 +25,7 @@ for i in $(seq 1 $1); do
     PARENT_DIR=$PREFIX"_"$i
     DATA_PATH=$PARENT_DIR"/datadir"
     SOCKET_PATH=$PARENT_DIR"/socket"
-    PORT=$((61356 + $i))
+    PORT=$((61736 + $i))
 
     if [ -d "$PARENT_DIR" ]; then
         echo "Starting MySQL server $i, using datadir $DATA_PATH, socket $SOCKET_PATH, and port $PORT."
