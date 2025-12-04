@@ -29,6 +29,8 @@ fi
 read -p "Do you want to remove the mysqld directories? [y/n] " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
-  rm -rf $PREFIX
-  echo "Directories removed."
+  for dir in $PREFIX*; do
+    [ -d "$dir" ] && rm -rf "$dir"
+    echo "Removed $dir"
+  done
 fi
