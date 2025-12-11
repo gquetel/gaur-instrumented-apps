@@ -1,10 +1,10 @@
 let
-  inputs = import ../../npins;
+  inputs = import ../../../npins;
   pkgs = import inputs.nixpkgs { };
   lib = pkgs.lib;
 
   fs = lib.fileset;
-  sourceFiles = ../../bison-skeletons;
+  sourceFiles = ../../../bison-skeletons;
   src_grammars = fs.toSource {
     root = ./.;
     fileset = sourceFiles;
@@ -13,7 +13,7 @@ let
   custom-bison = pkgs.bison.overrideAttrs (
     p: final: {
       postInstall = ''
-        cp -vrT ${../../bison-skeletons} $out/share/bison/skeletons/
+        cp -vrT ${../../../bison-skeletons} $out/share/bison/skeletons/
       '';
       doInstallCheck = false; # Disabled tests, they are too long when debuging
 
@@ -22,7 +22,7 @@ let
 in
 (pkgs.mysql84.overrideAttrs (
   final: prev: {
-    patches = prev.patches ++ [ ./mysql/sql_yacc.patch ];
+    patches = prev.patches ++ [ ./sql_yacc.patch ];
   }
 )).override
   ({ bison = custom-bison; })
