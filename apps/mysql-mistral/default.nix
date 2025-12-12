@@ -22,7 +22,7 @@ pkgs.writeScriptBin "run-server" ''
   #!/usr/bin/env bash
 
   shostname=$(hostname -s)
-  base=~/tmp/$shostname/mistral
+  base=~/tmp/$shostname/mysqld-mistral
 
   port=61836
   datadir=$base/datadir
