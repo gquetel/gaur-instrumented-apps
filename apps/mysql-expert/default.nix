@@ -22,7 +22,7 @@ pkgs.writeScriptBin "run-server" ''
   #!/usr/bin/env bash
 
   shostname=$(hostname -s)
-  base=~/tmp/$shostname/expert
+  base=~/tmp/$shostname/mysqld-expert
 
   port=61636
   datadir=$base/datadir
