@@ -1,8 +1,8 @@
 # gaur-instrumented-apps
 
-A collection of applications instrumented with [**gaur**](https://github.com/gquetel/gaur).  
+A collection of applications instrumented with [**gaur**](https://github.com/gquetel/gaur).  **Gaur** is a tool that automatically instruments Bison-generated parsers to provide **lexical, syntactic, and semantic information** for Intrusion Detection Systems (IDS). The tool is further described in our paper: **Parser Instrumentation for Semantic-Aware Applicative Intrusion Detection**. Published in 41st International Conference on ICT Systems Security and Privacy Protection (IFIPSEC26), 2026. Recommended citation:
 
-**Gaur** is a tool that automatically instruments Bison-generated parsers to provide **lexical, syntactic, and semantic information** for Intrusion Detection Systems (IDS). 
+> Quetel, G., Gimenez, P. F., Robert, T. & Pautet, L. (2026 June). Parser Instrumentation for Semantic-Aware Applicative Intrusion Detection. In the 41st International Conference on ICT Systems Security and Privacy Protection (IFIPSEC26) 
 
 All instrumented applications are built using **Nix** and the patch mechanism. This repository contains the patches needed to reproduce the instrumented builds (no invocation of **gaur** is required).
 
