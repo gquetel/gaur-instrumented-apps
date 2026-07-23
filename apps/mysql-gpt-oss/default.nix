@@ -24,7 +24,7 @@ pkgs.writeScriptBin "run-server" ''
   shostname=$(hostname -s)
   base=~/tmp/$shostname/mysqld-gpt-oss
 
-  port=61636
+  port=61936
   datadir=$base/datadir
   socket=$base/socket
 
